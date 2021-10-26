@@ -1,23 +1,19 @@
-# 打金系统
+# Vue3 + Element ui 开发模板
 
-## Project setup
+### 安装
 
 ```
-yarn install
+使用 git clone 将项目下载到本地,执行 yarn install 安装依赖
 ```
 
-### Vue3 + Element ui 开发模板
+### 启动命令
 
 ```
 yarn serve
 ```
 
-### Compiles and minifies for production
+### 打包
 
 ```
 yarn build
 ```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
