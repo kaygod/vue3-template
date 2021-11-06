@@ -13,13 +13,18 @@ export const m:Module<HomeType,RootState> = {
     age:18
   },
   mutations:{
-    increment (state) {
-      state.name = "123";
+    incrementAge (state) {
+      state.age = 3;
     }  
   },
   actions:{
-    incrementIfOddOnRootSum ({ state, commit, rootState }) {
-        commit('increment')
+    increment({ state, commit, rootState }) {
+      commit('incrementAge')
+    }
+  },
+  getters:{
+    getName(state){
+       return state.name.split("").reverse().join("");
     }
   }
 }

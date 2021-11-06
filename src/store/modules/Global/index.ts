@@ -2,7 +2,7 @@ import { RootState } from "@/store/store";
 import { Module } from "vuex";
 
 export interface GlobalType {
-  data:string
+  data:string,
 }
 
 export const m:Module<GlobalType,RootState> = {
@@ -12,7 +12,7 @@ export const m:Module<GlobalType,RootState> = {
   },
   mutations:{
     increment (state) {
-      state.data = "123";
+     state.data = "hello";
     }  
   },
   actions:{
