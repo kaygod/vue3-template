@@ -1,23 +1,23 @@
-import { RootState } from "@/store/store";
-import { Module } from "vuex";
+import { RootState } from '@/store/store'
+import { Module } from 'vuex'
 
 export interface GlobalType {
   data:string,
 }
 
-export const m:Module<GlobalType,RootState> = {
-  namespaced:true, 
+export const m:Module<GlobalType, RootState> = {
+  namespaced: true,
   state: {
-    data:"hello world"
+    data: 'hello world'
   },
-  mutations:{
+  mutations: {
     increment (state) {
-     state.data = "hello";
-    }  
+      state.data = 'hello'
+    }
   },
-  actions:{
-    incrementIfOddOnRootSum ({ state, commit, rootState }) {
-        commit('increment')
+  actions: {
+    incrementIfOddOnRootSum ({ commit }) {
+      commit('increment')
     }
   }
 }

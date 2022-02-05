@@ -1,1 +1,1 @@
-export default (code: string) => string;
+export default (code: string) => string

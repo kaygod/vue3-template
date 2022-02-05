@@ -1,27 +1,27 @@
-import { createApp, ComponentPublicInstance, ComponentOptionsBase } from 'vue';
-import { importVant } from '@/config/vant';
+import { createApp } from 'vue'
+import { onDemand as importVant } from '@/config/onDemand'
 
 export const Modal = (Component: any, props: any) => {
   const destory = () => {
-    _instance.unmount();
-    document.body.removeChild(node);
-  };
+    _instance.unmount()
+    document.body.removeChild(node)
+  }
   const _instance = createApp(Component, {
     ...props,
-    destory,
-  });
+    destory
+  })
 
-  importVant(_instance);
+  importVant(_instance)
 
-  const node = document.createElement('DIV');
+  const node = document.createElement('DIV')
 
-  document.body.appendChild(node);
+  document.body.appendChild(node)
 
   type instanceType = { show: () => void };
 
-  const cot = _instance.mount(node) as unknown;
+  const cot = _instance.mount(node) as unknown
 
-  const instance = cot as instanceType;
+  const instance = cot as instanceType
 
-  return instance;
-};
+  return instance
+}

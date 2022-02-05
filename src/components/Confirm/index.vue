@@ -1,4 +1,3 @@
-<!-- 确认框 -->
 <template>
   <div class="confirm">
     <van-popup
@@ -24,50 +23,50 @@
 </template>
 
 <script lang='ts'>
-import { reactive, ref, onBeforeMount, onMounted, defineComponent } from "vue";
+import { ref, defineComponent } from 'vue'
 export default defineComponent({
   props: {
     title: {
       type: String,
-      default: "标题",
+      default: '标题'
     },
     content: {
       type: String,
-      default: "",
+      default: ''
     },
     okText: {
       type: String,
-      default: "确认",
+      default: '确认'
     },
     callback: {
       type: Function,
-      default: () => {},
+      default: () => { return false }
     },
     destory: {
       type: Function,
-      required: true,
-    },
+      required: true
+    }
   },
-  setup(props) {
-    const show = ref(true);
-    //点击确定
+  setup (props) {
+    const show = ref(true)
+    // 点击确定
     const onEnsure = () => {
-      props.callback();
-      props.destory(); //销毁组件
-    };
+      props.callback()
+      props.destory() // 销毁组件
+    }
 
-    //关闭弹出框
+    // 关闭弹出框
     const onClose = () => {
-      props.destory(); //销毁组件
-    };
+      props.destory() // 销毁组件
+    }
 
     return {
       show,
       onEnsure,
-      onClose,
-    };
-  },
-});
+      onClose
+    }
+  }
+})
 </script>
 <style scoped lang="less">
 .confirm {

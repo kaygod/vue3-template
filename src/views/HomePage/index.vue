@@ -5,29 +5,28 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from 'vue'
+import { defineComponent } from 'vue'
 import { useState } from '@/hook/useState'
 import { useMethod } from '@/hook/useMethod'
-import { useGetter } from "@/hook/useGetter"
+import { useGetter } from '@/hook/useGetter'
 
 export default defineComponent({
   name: 'Home',
-  setup() {
+  setup () {
+    const state = useState('HomePage', ['name', 'age'])
 
-    const state = useState('HomePage', ['name', 'age']);
+    const rootState = useState(['content'])
 
-    const rootState = useState(['content']);
-
-    const getters = useGetter('HomePage',["getName"]);
+    const getters = useGetter('HomePage', ['getName'])
 
     const [actions, mutations] = useMethod('HomePage', [
       'increment',
-      'incrementAge',
+      'incrementAge'
     ])
 
-     const [rootActions, rootMutations] = useMethod([
+    const [rootActions, rootMutations] = useMethod([
       'updateContent',
-      'update',
+      'update'
     ])
 
     return {
@@ -39,7 +38,7 @@ export default defineComponent({
       rootActions,
       rootMutations
     }
-  },
+  }
 })
 </script>
 <style scoped lang="scss">

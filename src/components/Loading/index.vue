@@ -13,17 +13,13 @@
 
 <script lang='ts'>
 import {
-  reactive,
-  toRefs,
-  onBeforeMount,
-  onMounted,
-  defineComponent,
-} from "vue";
+  defineComponent
+} from 'vue'
 export default defineComponent({
-  setup() {
-    return {};
-  },
-});
+  setup () {
+    return {}
+  }
+})
 </script>
 <style scoped lang="less">
 .wrapper {
